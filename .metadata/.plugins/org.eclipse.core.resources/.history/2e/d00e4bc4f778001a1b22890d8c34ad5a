@@ -1,0 +1,14 @@
+/*
+ * ejrc1_clase3.h
+ *	Ejercicio de funciones Labo/Prog clase 3
+ *  Created on: 6 abr. 2020
+ *  Author: mdangelo
+ */
+
+#ifndef EJERCICIOS_EJRC1_CLASE3_H_
+#define EJERCICIOS_EJRC1_CLASE3_H_
+
+void ejerc1Clase3();
+
+
+#endif /* EJERCICIOS_EJRC1_CLASE3_H_ */

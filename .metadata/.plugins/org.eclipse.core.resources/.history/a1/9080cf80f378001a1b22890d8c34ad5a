@@ -1,0 +1,15 @@
+/*
+ * utn_commons.h
+ *  Created on: 7 abr. 2020
+ *  Author: mdangelo
+ */
+
+#ifndef COMMONS_UTN_COMMONS_H_
+#define COMMONS_UTN_COMMONS_H_
+
+//return a char (in uppercase) that which is equal to the character cV1 or cV2
+char getChar(char *pMsj,char cVl1, char cVl2);
+//return a char (in uppercase) that which is equal to the character cV1 or cV2
+float getFloat(char *pStr, float iFrom, float iUntil);
+
+#endif /* COMMONS_UTN_COMMONS_H_ */

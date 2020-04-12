@@ -1,0 +1,77 @@
+/*
+ ============================================================================
+ Name        : LaboProg1Proj.c
+ Author      : mdangelo
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+
+//utn
+#include "./ejercicios/ejrc1_clase2.h"
+#include "./ejercicios/ejrcA_clase2.h"
+#include "./ejercicios/ejrcB_clase2.h"
+#include "./ejercicios/ejrcC_clase2.h"
+//#include "./ejercicios/ejrc1_clase3.h"
+
+
+//alg_fondo
+#include "./alg_fondo/ejrc1_4.h"
+#include "./alg_fondo/ejrc1_8_nprim.h"
+#include "alg_fondo/ejrc2_12_planilla.h"
+
+int getInt(char *pStr, int iFrom, int iUntill);
+int getChar(char *pStr);
+float getFloat(char *pStr);
+
+int main(void) {
+	//=====utn============
+	//ejerc1Clase2(); //calculadora
+	//ejrcAClase2();
+	//ejrcBClase2();
+	//ejrcCClase2();
+
+	int iLegajo = getInt("legajo",111,222);
+	float fALtura = getFloat("altura");
+	char cSexo = getChar("sexo [M-F]");
+
+	printf("El LEGAJO ingresada es %d\n",iLegajo);
+	printf("La altura ingresada es %.2f\n",fALtura);
+	printf("EL sexo es %c\n",cSexo);
+
+
+	//=====alg fondo:============
+	//ejerc14Fecha();
+	//esPrimo();
+	//procesarALumnos();
+
+	return EXIT_SUCCESS;
+}
+int getInt(char *pStr, int iFrom, int iUntill){
+	int iVal=0;
+
+	do{
+		printf("Ingrese un/una %s, recuerde [%d,%d]: ",pStr, iFrom, iUntill);
+		scanf("%d",&iVal);
+		__fpurge(stdin);
+	}while(iVal<iFrom || iVal>iUntill);
+
+	return iVal;
+}
+int getChar(char *pStr){
+	char cVal;
+	printf("Ingrese %s",pStr);
+	scanf("%c",&cVal);
+	return cVal;
+}
+float getFloat(char *pStr){
+	float fVal;
+	printf("Ingrese %s",pStr);
+	scanf("%f",&fVal);
+	return fVal;
+}

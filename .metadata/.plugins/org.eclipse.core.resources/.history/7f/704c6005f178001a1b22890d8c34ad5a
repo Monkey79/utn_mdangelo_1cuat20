@@ -1,0 +1,13 @@
+/*
+ * utn_commons.h
+ *
+ *  Created on: 7 abr. 2020
+ *  Author: mdangelo
+ */
+
+#ifndef COMMONS_UTN_COMMONS_H_
+#define COMMONS_UTN_COMMONS_H_
+
+char getChar(char *pMsj,char cVl1, char cVl2);
+
+#endif /* COMMONS_UTN_COMMONS_H_ */

@@ -1,0 +1,55 @@
+/*
+ ============================================================================
+ Name        : LaboProg1Proj.c
+ Author      : mdangelo
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+
+//utn
+#include "./ejercicios/ejrc1_clase2.h"
+#include "./ejercicios/ejrcA_clase2.h"
+#include "./ejercicios/ejrcB_clase2.h"
+#include "./ejercicios/ejrcC_clase2.h"
+//#include "./ejercicios/ejrc1_clase3.h"
+
+
+//alg_fondo
+#include "./alg_fondo/ejrc1_4.h"
+#include "./alg_fondo/ejrc1_8_nprim.h"
+#include "alg_fondo/ejrc2_12_planilla.h"
+
+
+int ejerc1Clase3Main(void);
+
+int main(void) {
+	//=====utn============
+	//ejerc1Clase2(); //calculadora
+	//ejrcAClase2();
+	//ejrcBClase2();
+	//ejrcCClase2();
+
+	int iNum = ejerc1Clase3Main();
+	printf("El numero ingresado es %d\n",iNum);
+
+
+	//=====alg fondo:============
+	//ejerc14Fecha();
+	//esPrimo();
+	//procesarALumnos();
+
+	return EXIT_SUCCESS;
+}
+
+int ejerc1Clase3Main(void){
+	int iVal=0;
+	printf("Ingrese un numero entero: ");
+	scanf("%d",iVal);
+	return iVal;
+}

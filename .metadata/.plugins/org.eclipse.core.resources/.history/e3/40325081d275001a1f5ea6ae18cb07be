@@ -1,0 +1,21 @@
+/*
+ * ejrc1_8_nprim.c
+ *
+ *  Created on: 3 abr. 2020
+ *      Author: monkey
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+
+#define TRUE 1;
+#define FALSE 0;
+
+void esPrimo(){
+	int iNum=0;
+	int iCont=2;
+	int esPrimo;
+}
+
+

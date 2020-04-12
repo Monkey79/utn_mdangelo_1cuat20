@@ -1,0 +1,63 @@
+/*
+ ============================================================================
+ Name        : LaboProg1Proj.c
+ Author      : mdangelo
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+
+//utn
+#include "./ejercicios/ejrc1_clase2.h"
+#include "./ejercicios/ejrcA_clase2.h"
+#include "./ejercicios/ejrcB_clase2.h"
+#include "./ejercicios/ejrcC_clase2.h"
+//#include "./ejercicios/ejrc1_clase3.h"
+
+
+//alg_fondo
+#include "./alg_fondo/ejrc1_4.h"
+#include "./alg_fondo/ejrc1_8_nprim.h"
+#include "alg_fondo/ejrc2_12_planilla.h"
+
+
+int ejerc1Clase3Main(char *pStr, int iFrom, int iUntill);
+
+int main(void) {
+	//=====utn============
+	//ejerc1Clase2(); //calculadora
+	//ejrcAClase2();
+	//ejrcBClase2();
+	//ejrcCClase2();
+
+	int iEdad = ejerc1Clase3Main("edad",1,10);
+	int iLegajo = ejerc1Clase3Main("legajo",111,222);
+
+	printf("La edad ingresada es %d\n",iEdad);
+	printf("El legajo ingresado es %d\n",iLegajo);
+
+
+	//=====alg fondo:============
+	//ejerc14Fecha();
+	//esPrimo();
+	//procesarALumnos();
+
+	return EXIT_SUCCESS;
+}
+
+int ejerc1Clase3Main(char *pStr, int iFrom, int iUntill){
+	int iVal=0;
+
+	do{
+		printf("Ingrese un/una %s, recuerde [%d,%d]: ",pStr, iFrom, iUntill);
+		scanf("%d",&iVal);
+		__fpurge(stdin);
+	}while(iVal<iFrom || iVal>iUntill);
+
+	return iVal;
+}

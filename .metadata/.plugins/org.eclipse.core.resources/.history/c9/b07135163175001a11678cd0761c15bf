@@ -1,0 +1,36 @@
+/*
+ * ejrc1_4.c
+ *	Me ingresan una fecha en formato aaaammdd descomponerla
+ *	en años mes y dia y mostrarle
+ *  Created on: 2 abr. 2020
+ *  Author: mdangelo
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+
+#include "ejrc1_4.h"
+
+
+void ejerc14Fecha() {
+	int iAnio;
+	int iMes;
+	int iDia;
+	int iResto;
+
+	long valFch;
+
+	printf("Ingrese la fecha en formato aaaammdd\n");
+	scanf("%l",valFch);
+
+	iAnio = valFch / 10000;
+	iResto = valFch % 10000;
+	iMes = iResto / 100;
+	iDia = iResto % 100;
+
+	printf("El año es %d, el mes es %d y el dia es %d", iAnio, iMes, iDia);
+
+}
+
+

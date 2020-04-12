@@ -1,0 +1,49 @@
+/*
+ * ejrcA_clase2.c
+ *  Created on: 1 abr. 2020
+ *  Author: mdangelo
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+
+#include "ejrcA_clase2.h"
+
+#define TOP 5
+#define PROD 'A'
+
+void ejrcAClase2(){
+	int i;
+	float fMax; //NI maximos Ni minimos se inicializan
+	float fProm=0;
+
+	char cProdTp;
+	float fPrc;
+
+	for(i=0;i<TOP;i++){
+		printf("-1->%d\n", i);
+
+		printf("Ingrese tipo de producto (A|B validos): ");
+		scanf("%c",&cProdTp);
+		//cProdTp = toupper(cProdTp);
+		printf("Ingrese el precio de ese producto: ");
+		//scanf("%f", &fPrc);
+
+
+		/*if(strcmp(PROD, cProdTp)==0){
+			if(i==0)
+				fMax = fPrc;
+			else if(fPrc > fMax)
+				fMax = fPrc;
+		}
+		fProm += fPrc;*/
+
+		__fpurge(stdin);
+	}
+	fProm = fProm/i;
+
+	printf("El precio maximo fue: %.2f\n", fMax);
+	printf("El promedio de los precios de los 5 productos es %.2f\n", fProm);
+
+}
+
