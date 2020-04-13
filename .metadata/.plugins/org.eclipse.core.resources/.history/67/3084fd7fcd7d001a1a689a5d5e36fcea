@@ -40,7 +40,7 @@ int main(void) {
 	//esPrimo();
 	//procesarALumnos();
 	//ejrc213Billetes(); //billetes
-	//ejerc313Bisiesto();
+	ejerc313Bisiesto();
 
 	return EXIT_SUCCESS;
 }
