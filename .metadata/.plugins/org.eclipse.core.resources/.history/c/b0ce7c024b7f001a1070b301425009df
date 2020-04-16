@@ -1,0 +1,30 @@
+/*
+ * ejrc1_clase6.c
+ * Created on: 15 abr. 2020
+ * Author: mdangelo
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+
+#include "ejrc1_clase6.h"
+#include "../commons/utn_commons.h"
+
+#define LENGTH 6
+
+void clase5B(void){
+	int notas[LENGTH];
+	utnInitializeIntgArr(notas,0,LENGTH);
+	_showAllArrayContent(notas, LENGTH);
+	_chargeArrayRandom(notas);
+	_showAllArrayContent(notas, LENGTH);
+}
+
+void _initializeArray(int *pNotas) {
+	for(int i=0; i<LENGTH-1; i++){
+		*(pNotas+i) = 0;
+	}
+}
+
+

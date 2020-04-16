@@ -1,0 +1,24 @@
+/*
+ * ejrc1_clase3.c
+ * Ejercicio de funciones Labo/Prog clase 3
+ * Created on: 6 abr. 2020
+ * Author: monkey
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+
+#include "../commons/utn_commons.h"
+
+#include "ejrc1_clase3.h"
+
+void ejerc1Clase3(){
+	int iLegajo = getInt("legajo",111,222);
+	float fALtura = getFloat("altura",0.50,2.22);
+	char cSexo = getChar("sexo [M-F]",'M','F');
+
+	printf("El Legajo ingresada es %d\n",iLegajo);
+	printf("La Altura ingresada es %.2f\n",fALtura);
+	printf("EL sexo es %c\n",cSexo);
+}

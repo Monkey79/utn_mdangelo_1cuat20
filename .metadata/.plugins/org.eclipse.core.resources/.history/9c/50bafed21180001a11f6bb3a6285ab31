@@ -1,0 +1,102 @@
+/*
+ ============================================================================
+ Name        : LaboProg1Proj.c
+ Author      : mdangelo
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+
+//=====UTN Prog y Labo==========
+#include "commons/utn_commons.h"
+
+#include "./ejercicios/ejrc1_clase2.h"
+#include "./ejercicios/ejrcA_clase2.h"
+#include "./ejercicios/ejrcB_clase2.h"
+#include "./ejercicios/ejrcC_clase2.h"
+#include "./ejercicios/ejrc1_clase3.h"
+
+//====Alg-Fondo===============
+#include "./alg_fondo/ejrc1_4.h"
+#include "./alg_fondo/ejrc1_8_nprim.h"
+#include "./alg_fondo/ejrc2_12_planilla.h"
+#include "alg_fondo/ejrc2_13.h"
+#include "alg_fondo/ejrc3_3_bisiesto.h"
+
+
+int main(void) {
+	//=====UTN============
+	//ejerc1Clase2(); //calculadora
+	//ejrcAClase2();
+	//ejrcBClase2();
+	//ejrcCClase2();
+	//ejerc1Clase3(); //funciones - clase 3 labo-prog
+
+	ejerc1Aclase6();
+	//clase5C();
+	//clase6A(); //ordenamiento
+
+
+	//=====Alg-Fondo============
+	//ejerc14Fecha();
+	//esPrimo();
+	//procesarALumnos();
+	//ejrc213Billetes(); //billetes
+	//ejerc313Bisiesto();
+
+	return EXIT_SUCCESS;
+}
+/*void clase6A(void){
+	int edades[8] = {1,5,3,9,2,6,4};
+	printf("====ANTES======\n");
+	_showAllArrayContent(edades,8);
+	utnBubleOrderIntArr(edades,8);
+	printf("====DESPUES======\n");
+	_showAllArrayContent(edades,8);
+}*/
+void clase5A(void){
+	int edades[3] = {1,2,3};
+
+	printf("===VALORES=====\n");
+	printf("-->A: %d\n", edades[1]);
+	printf("-->B: %d\n", *(edades+1));
+
+	printf("===DIRECC MEMORIA=====\n");
+	printf("-->C: %0x\n", &edades[1]);
+	printf("-->D: %0x\n", edades+1);
+	printf("-->Z: %d\n", &edades[1]);
+}
+
+
+/*La suma acomulada
+ * La cantidad de notas cargadas
+ * La cantidad de aprobados
+ * La cantidad de desaprobados
+ * La nota maxima
+ * La nota minima
+ * La cantidad de notas pares
+ *
+ * mostrar todos los elementos
+ * mostrar los elementos vacios con su indice para  el cliente
+ * mostrar solo los elementos cargados
+ * */
+/*void clase5C(){
+	int notas[LENGTH_2]={1,2,6,6,8,10};
+	printf("=Cantidad notas cargadas: %d=\n", _getValuesCharged(notas, 0));
+	printf("=Cantidad de aprobados %d=\n", _getAmmountPassStudent(notas,4));
+	printf("=Cantidad de NO aprobados %d=\n", _getAmmountNotPassStudent(notas,4));
+	printf("=La nota maxima %d=\n", _getMaxScore(notas,0));
+	printf("=La nota minima %d=\n", _getMinScore(notas,0));
+	printf("=La cantidad de notas pares %d=\n", _getEvenScore(notas,0));
+	printf("=La cantidad de notas impares %d=\n", _getOddScore(notas,0));
+	printf("==Todos los elementos del array==\n");
+	_showAllArrayContent(notas,LENGTH_2);
+	printf("==Todos los elementos vacioos del array==\n");
+	_showAllArrayEmptyContent(notas,LENGTH_2,0);
+
+}*/

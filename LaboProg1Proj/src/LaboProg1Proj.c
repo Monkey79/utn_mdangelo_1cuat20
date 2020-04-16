@@ -13,11 +13,14 @@
 #include <stdio_ext.h>
 
 //=====UTN Prog y Labo==========
+#include "commons/utn_commons.h"
+
 #include "./ejercicios/ejrc1_clase2.h"
 #include "./ejercicios/ejrcA_clase2.h"
 #include "./ejercicios/ejrcB_clase2.h"
 #include "./ejercicios/ejrcC_clase2.h"
 #include "./ejercicios/ejrc1_clase3.h"
+#include "ejercicios/ejrc1_clase6.h"
 
 //====Alg-Fondo===============
 #include "./alg_fondo/ejrc1_4.h"
@@ -34,6 +37,10 @@ int main(void) {
 	//ejrcBClase2();
 	//ejrcCClase2();
 	//ejerc1Clase3(); //funciones - clase 3 labo-prog
+
+	//ejerc1Aclase6();
+	//ejerc1Bclase6();
+	ejerc1Cclase6(); //buble-sort
 
 	//=====Alg-Fondo============
 	//ejerc14Fecha();

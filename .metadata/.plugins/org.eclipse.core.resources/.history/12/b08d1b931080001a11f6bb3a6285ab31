@@ -1,0 +1,44 @@
+/*
+ * ejrc1_clase6.c
+ * Created on: 15 abr. 2020
+ * Author: mdangelo
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+
+#include "ejrc1_clase6.h"
+#include "../commons/utn_commons.h"
+
+#define LENGTH 6
+
+
+
+void ejerc1Aclase6(void) {
+	int notas[]={1,2,6,6,8};
+	printf("=Cantidad notas cargadas: %d=\n", utnGetNotEmptyVlsIntArr(notas, LENGTH,0));
+	printf("=Cantidad de aprobados %d=\n", utnGetGretEqlsVlsIntArr(notas, LENGTH,0,4));
+	printf("=Cantidad de NO aprobados %d=\n", utnGetLessVlsIntArr(notas, LENGTH,0,4));
+
+	printf("=La nota maxima %d=\n", utnGetMaxIntArr(notas,0));
+	printf("=La nota minima %d=\n", utnGetMinIntArr(notas,0));
+	printf("=La cantidad de notas pares %d=\n", _getEvenScore(notas,0));
+
+
+
+
+
+}
+
+void clase5B(void){
+	int notas[LENGTH];
+
+	utnInitializeIntArr(notas,0,LENGTH);
+	utnShowAllIntArrContent(notas, LENGTH);
+
+	utnLoadIntArrByIndx(notas,LENGTH,0);
+
+	utnShowAllIntArrContent(notas, LENGTH);
+}
+

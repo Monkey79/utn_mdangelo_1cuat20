@@ -1,0 +1,119 @@
+/*
+ ============================================================================
+ Name        : LaboProg1Proj.c
+ Author      : mdangelo
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+
+//=====UTN Prog y Labo==========
+#include "./ejercicios/ejrc1_clase2.h"
+#include "./ejercicios/ejrcA_clase2.h"
+#include "./ejercicios/ejrcB_clase2.h"
+#include "./ejercicios/ejrcC_clase2.h"
+#include "./ejercicios/ejrc1_clase3.h"
+
+//====Alg-Fondo===============
+#include "./alg_fondo/ejrc1_4.h"
+#include "./alg_fondo/ejrc1_8_nprim.h"
+#include "./alg_fondo/ejrc2_12_planilla.h"
+#include "alg_fondo/ejrc2_13.h"
+#include "alg_fondo/ejrc3_3_bisiesto.h"
+
+
+void clase5A(void);
+
+void clase5B(int *pNotas);
+void _clase5CargarArray(int *pNotas);
+void _clase5MostrarArray(int *pNotas);
+
+#define LENGTH 5
+
+int main(void) {
+	//=====UTN============
+	//ejerc1Clase2(); //calculadora
+	//ejrcAClase2();
+	//ejrcBClase2();
+	//ejrcCClase2();
+	//ejerc1Clase3(); //funciones - clase 3 labo-prog
+
+	int notas[LENGTH];
+	clase5B(notas);
+
+
+	//=====Alg-Fondo============
+	//ejerc14Fecha();
+	//esPrimo();
+	//procesarALumnos();
+	//ejrc213Billetes(); //billetes
+	//ejerc313Bisiesto();
+
+	return EXIT_SUCCESS;
+}
+
+void clase5A(void){
+	int edades[3] = {1,2,3};
+
+	printf("===VALORES=====\n");
+	printf("-->A: %d\n", edades[1]);
+	printf("-->B: %d\n", *(edades+1));
+
+	printf("===DIRECC MEMORIA=====\n");
+	printf("-->C: %0x\n", &edades[1]);
+	printf("-->D: %0x\n", edades+1);
+	printf("-->Z: %d\n", &edades[1]);
+}
+/*La suma acomulada
+ * La cantidad de notas cargadas
+ * La cantidad de aprobados
+ * La cantidad de desaprobados
+ * La nota maxima
+ * La nota minima
+ * La cantidad de notas pares
+ *
+ * mostrar todos los elementos
+ * mostrar los elementos vacios con su indice para  el cliente
+ * mostrar solo los elementos cargados
+ * */
+void clase5B(int *pNotas){
+	_clase5CargarArray(pNotas);
+	_clase5MostrarArray(pNotas);
+}
+
+void _clase5CargarArray(int *pNotas){
+	int i;
+	int nota = 0;
+	char cargar = 'S';
+
+	do{
+
+		do{
+			printf("En que posicion quiere ingresar la nota [0,%d]: \n",LENGTH-2);
+			scanf("%d",&i);
+			__fpurge(stdin);
+		}while(i < 0 || i>LENGTH-2);
+
+	}while(cargar=='S');
+
+
+
+	do{
+		printf("Ingrese la nota que ira en la posicion %d [1,10]:\n",i);
+		scanf("%d",&nota);
+		__fpurge(stdin);
+	}while(nota<=0 || nota>10);
+
+	pNotas[i] = nota;
+}
+
+void _clase5MostrarArray(int *pNotas){
+	for(int i=0; i<LENGTH-1; i++){
+		printf("Posicion %d nota %d\n",i,*(pNotas+i));
+	}
+}

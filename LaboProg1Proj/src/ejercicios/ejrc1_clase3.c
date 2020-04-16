@@ -14,9 +14,9 @@
 #include "ejrc1_clase3.h"
 
 void ejerc1Clase3(){
-	int iLegajo = getInt("legajo",111,222);
-	float fALtura = getFloat("altura",0.50,2.22);
-	char cSexo = getChar("sexo [M-F]",'M','F');
+	int iLegajo = utnGetIntBetween(111,222);
+	float fALtura = utnGetFloatBetween("Ingrese altura [0.50,2.22]",0.50,2.22);
+	char cSexo = utnGetCharBetween("Ingrese sexo [M-F]",'M','F');
 
 	printf("El Legajo ingresada es %d\n",iLegajo);
 	printf("La Altura ingresada es %.2f\n",fALtura);

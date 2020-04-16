@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdio_ext.h>
 
 #include "ejrc1_clase2.h"
 
