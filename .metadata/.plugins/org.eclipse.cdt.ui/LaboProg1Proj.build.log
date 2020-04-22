@@ -1,64 +1,6 @@
-16:30:13 **** Incremental Build of configuration Debug for project LaboProg1Proj ****
+17:11:53 **** Incremental Build of configuration Debug for project LaboProg1Proj ****
 make all 
-Building file: ../src/ejercicios/ejrc1_clase3.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ejercicios/ejrc1_clase3.d" -MT"src/ejercicios/ejrc1_clase3.o" -o "src/ejercicios/ejrc1_clase3.o" "../src/ejercicios/ejrc1_clase3.c"
-Finished building: ../src/ejercicios/ejrc1_clase3.c
- 
-Building file: ../src/ejercicios/ejrc1_clase6.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ejercicios/ejrc1_clase6.d" -MT"src/ejercicios/ejrc1_clase6.o" -o "src/ejercicios/ejrc1_clase6.o" "../src/ejercicios/ejrc1_clase6.c"
-../src/ejercicios/ejrc1_clase6.c: In function ‘ejerc1Bclase6’:
-../src/ejercicios/ejrc1_clase6.c:35:2: warning: implicit declaration of function ‘utnInitializeIntArr’; did you mean ‘utnInitializeIntgArr’? [-Wimplicit-function-declaration]
-  utnInitializeIntArr(notas,0,LENGTH);
-  ^~~~~~~~~~~~~~~~~~~
-  utnInitializeIntgArr
-Finished building: ../src/ejercicios/ejrc1_clase6.c
- 
-Building file: ../src/commons/utn_commons.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/commons/utn_commons.d" -MT"src/commons/utn_commons.o" -o "src/commons/utn_commons.o" "../src/commons/utn_commons.c"
-../src/commons/utn_commons.c: In function ‘utnGetCharBetween’:
-../src/commons/utn_commons.c:22:10: warning: implicit declaration of function ‘toupper’ [-Wimplicit-function-declaration]
-   cVal = toupper(cVal);
-          ^~~~~~~
-../src/commons/utn_commons.c: In function ‘utnGetFloatBetween’:
-../src/commons/utn_commons.c:31:3: warning: format not a string literal and no format arguments [-Wformat-security]
-   printf(pMssg);
-   ^~~~~~
-../src/commons/utn_commons.c: In function ‘utnGetMaxIntArr’:
-../src/commons/utn_commons.c:111:5: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
-   if(*(pIntArr+i)!=iIntVal)
-     ^
-../src/commons/utn_commons.c: In function ‘utnGetMinIntArr’:
-../src/commons/utn_commons.c:125:5: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
-   if(*(pIntArr+i)!=iIntVal)
-     ^
-Finished building: ../src/commons/utn_commons.c
- 
-Building file: ../src/alg_fondo/ejrc3_3_bisiesto.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/alg_fondo/ejrc3_3_bisiesto.d" -MT"src/alg_fondo/ejrc3_3_bisiesto.o" -o "src/alg_fondo/ejrc3_3_bisiesto.o" "../src/alg_fondo/ejrc3_3_bisiesto.c"
-../src/alg_fondo/ejrc3_3_bisiesto.c: In function ‘_revisarErrBis’:
-../src/alg_fondo/ejrc3_3_bisiesto.c:62:3: warning: value computed is not used [-Wunused-value]
-   *pErrCnt++;
-   ^~~~~~~~~~
-../src/alg_fondo/ejrc3_3_bisiesto.c: In function ‘_continuar’:
-../src/alg_fondo/ejrc3_3_bisiesto.c:71:17: warning: implicit declaration of function ‘toupper’ [-Wimplicit-function-declaration]
-   *cContinuar = toupper(*cContinuar);
-                 ^~~~~~~
-Finished building: ../src/alg_fondo/ejrc3_3_bisiesto.c
- 
-Building file: ../src/LaboProg1Proj.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LaboProg1Proj.d" -MT"src/LaboProg1Proj.o" -o "src/LaboProg1Proj.o" "../src/LaboProg1Proj.c"
-Finished building: ../src/LaboProg1Proj.c
- 
-Building target: LaboProg1Proj
-Invoking: GCC C Linker
-gcc  -o "LaboProg1Proj"  ./src/ejercicios/ejrc1_clase2.o ./src/ejercicios/ejrc1_clase3.o ./src/ejercicios/ejrc1_clase6.o ./src/ejercicios/ejrcA_clase2.o ./src/ejercicios/ejrcB_clase2.o ./src/ejercicios/ejrcC_clase2.o  ./src/commons/utn_commons.o  ./src/alg_fondo/ejrc1_4.o ./src/alg_fondo/ejrc1_8_nprim.o ./src/alg_fondo/ejrc2_12_planilla.o ./src/alg_fondo/ejrc2_13.o ./src/alg_fondo/ejrc3_3_bisiesto.o  ./src/LaboProg1Proj.o   
-Finished building target: LaboProg1Proj
- 
+make: No se hace nada para 'all'.
 
-16:30:14 Build Finished. 0 errors, 7 warnings. (took 970ms)
+17:11:53 Build Finished. 0 errors, 0 warnings. (took 622ms)
 

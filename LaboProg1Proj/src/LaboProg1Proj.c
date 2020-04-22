@@ -20,7 +20,9 @@
 #include "./ejercicios/ejrcB_clase2.h"
 #include "./ejercicios/ejrcC_clase2.h"
 #include "./ejercicios/ejrc1_clase3.h"
-#include "ejercicios/ejrc1_clase6.h"
+#include "./ejercicios/ejrc1_clase6.h"
+#include "./ejercicios/ejrc1_clase7_arrparalelos.h"
+
 
 //====Alg-Fondo===============
 #include "./alg_fondo/ejrc1_4.h"
@@ -28,6 +30,8 @@
 #include "./alg_fondo/ejrc2_12_planilla.h"
 #include "alg_fondo/ejrc2_13.h"
 #include "alg_fondo/ejrc3_3_bisiesto.h"
+
+
 
 
 int main(void) {
@@ -40,7 +44,9 @@ int main(void) {
 
 	//ejerc1Aclase6();
 	//ejerc1Bclase6();
-	ejerc1Cclase6(); //buble-sort
+	//ejerc1Cclase6(); //buble-sort
+
+	startEjrc1Clase7ArrParl(); //abm - array paralelos
 
 	//=====Alg-Fondo============
 	//ejerc14Fecha();

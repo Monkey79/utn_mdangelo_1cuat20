@@ -1,0 +1,80 @@
+/*
+ ============================================================================
+ Name        : LaboProg1Proj.c
+ Author      : mdangelo
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+
+//=====UTN Prog y Labo==========
+#include "commons/utn_commons.h"
+
+#include "./ejercicios/ejrc1_clase2.h"
+#include "./ejercicios/ejrcA_clase2.h"
+#include "./ejercicios/ejrcB_clase2.h"
+#include "./ejercicios/ejrcC_clase2.h"
+#include "./ejercicios/ejrc1_clase3.h"
+#include "ejercicios/ejrc1_clase6.h"
+
+//====Alg-Fondo===============
+#include "./alg_fondo/ejrc1_4.h"
+#include "./alg_fondo/ejrc1_8_nprim.h"
+#include "./alg_fondo/ejrc2_12_planilla.h"
+#include "alg_fondo/ejrc2_13.h"
+#include "alg_fondo/ejrc3_3_bisiesto.h"
+
+#define ALUMNOS 7
+#define LIBRE 0
+#define OCUPADO 1
+
+int _buscarLibre(int *pEstadoArr, int iTop, int iValLbr);
+void inicializarAlumnos(int *estado, int iTop, int iValLibre);
+void mostrarAlumnos(int *pLegajoArr, int *pNota1Arr, int *pNota2Arr,float *pPromedioArr, char *pNombreMtz, int *pEstadoArr, int iTop,int iValNoLbr);
+void cargarAlumno(int *plegajoArr, int *pNota1Arr, int *pNota2Arr,float *pPromedioArr, char nombres[][20], int *pEstadoArr, int iTop,int iValLbr, int iValNoLbr);
+void _pedirTest(char unNombre[][5]);
+
+
+int main(void) {
+	//=====UTN============
+	//ejerc1Clase2(); //calculadora
+	//ejrcAClase2();
+	//ejrcBClase2();
+	//ejrcCClase2();
+	//ejerc1Clase3(); //funciones - clase 3 labo-prog
+
+	//ejerc1Aclase6();
+	//ejerc1Bclase6();
+	//ejerc1Cclase6(); //buble-sort
+
+	//=====Alg-Fondo============
+	//ejerc14Fecha();
+	//esPrimo();
+	//procesarALumnos();
+	//ejrc213Billetes(); //billetes
+	//ejerc313Bisiesto();
+
+	//=====UTN============
+	int legajo[ALUMNOS];
+	int nota1[ALUMNOS];
+	int nota2[ALUMNOS];
+	float promedio[ALUMNOS];
+	char nombre[ALUMNOS][20];
+	int estado[ALUMNOS];
+	int i;
+
+	inicializarAlumnos(estado, ALUMNOS, LIBRE);
+
+	for (i = 0; i < ALUMNOS - 5; i++) {
+		cargarAlumno(legajo, nota1, nota2, promedio, nombre, estado, ALUMNOS,LIBRE, OCUPADO);
+	}
+
+	mostrarAlumnos(legajo, nota1, nota2, promedio, nombre, estado, ALUMNOS,OCUPADO);
+
+	return EXIT_SUCCESS;
+}

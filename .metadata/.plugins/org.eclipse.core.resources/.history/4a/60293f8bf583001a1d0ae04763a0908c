@@ -1,0 +1,238 @@
+/*
+ ============================================================================
+ Name        : LaboProg1Proj.c
+ Author      : mdangelo
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+
+//=====UTN Prog y Labo==========
+#include "commons/utn_commons.h"
+
+#include "./ejercicios/ejrc1_clase2.h"
+#include "./ejercicios/ejrcA_clase2.h"
+#include "./ejercicios/ejrcB_clase2.h"
+#include "./ejercicios/ejrcC_clase2.h"
+#include "./ejercicios/ejrc1_clase3.h"
+#include "ejercicios/ejrc1_clase6.h"
+
+//====Alg-Fondo===============
+#include "./alg_fondo/ejrc1_4.h"
+#include "./alg_fondo/ejrc1_8_nprim.h"
+#include "./alg_fondo/ejrc2_12_planilla.h"
+#include "alg_fondo/ejrc2_13.h"
+#include "alg_fondo/ejrc3_3_bisiesto.h"
+
+#define ALUMNOS 7
+#define LIBRE 0
+#define OCUPADO 1
+
+int _buscarLibre(int *pEstadoArr, int iTop, int iValLbr);
+void inicializarAlumnos(int *estado, int iTop, int iValLibre);
+void mostrarAlumnos(int *pLegajoArr, int *pNota1Arr, int *pNota2Arr,
+		float *pPromedioArr, char *pNombreMtz, int *pEstadoArr, int iTop,
+		int iValNoLbr);
+void cargarAlumno(int *plegajoArr, int *pNota1Arr, int *pNota2Arr,
+		float *pPromedioArr, char *pNombreMtz, int *pEstadoArr, int iTop,
+		int iValLbr, int iValNoLbr);
+void _pedirTest(char *unNombre);
+int main(void) {
+	//=====UTN============
+	//ejerc1Clase2(); //calculadora
+	//ejrcAClase2();
+	//ejrcBClase2();
+	//ejrcCClase2();
+	//ejerc1Clase3(); //funciones - clase 3 labo-prog
+
+	//ejerc1Aclase6();
+	//ejerc1Bclase6();
+	//ejerc1Cclase6(); //buble-sort
+
+	//=====Alg-Fondo============
+	//ejerc14Fecha();
+	//esPrimo();
+	//procesarALumnos();
+	//ejrc213Billetes(); //billetes
+	//ejerc313Bisiesto();
+
+	//=====UTN============
+	int legajo[ALUMNOS];
+	int nota1[ALUMNOS];
+	int nota2[ALUMNOS];
+	float promedio[ALUMNOS];
+	char nombre[ALUMNOS][20];
+	int estado[ALUMNOS];
+	int i;
+
+	inicializarAlumnos(estado, ALUMNOS, LIBRE);
+
+	for (i = 0; i < ALUMNOS - 5; i++) {
+		cargarAlumno(legajo, nota1, nota2, promedio, nombre, estado, ALUMNOS,LIBRE, OCUPADO);
+	}
+
+	mostrarAlumnos(legajo, nota1, nota2, promedio, nombre, estado, ALUMNOS,OCUPADO);
+
+	return EXIT_SUCCESS;
+}
+
+void inicializarAlumnos(int *estado, int iTop, int iValLibre) {
+	for (int i = 0; i < iTop - 1; i++) {
+		*(estado + i) = iValLibre;
+	}
+}
+
+void cargarAlumno(int *plegajoArr, int *pNota1Arr, int *pNota2Arr,
+		float *pPromedioArr, char *pNombreMtz, int *pEstadoArr, int iTop,
+		int iValLbr, int iValNoLbr) {
+
+	//buscar una posicion dentro del array estado p/ guardar datos
+	int indLibre = _buscarLibre(pEstadoArr, iTop, iValLbr);
+	printf("-ind libre %d\n", indLibre);
+	if (indLibre != -1) {
+		printf("Ingrese un legajo: ");
+		scanf("%d", (plegajoArr + indLibre));
+		__fpurge(stdin);
+		printf("Ingrese la 1era nota: ");
+		scanf("%d", (pNota1Arr + indLibre));
+		__fpurge(stdin);
+		printf("Ingrese la 2da nota: ");
+		scanf("%d", (pNota2Arr + indLibre));
+		__fpurge(stdin);
+		*(pPromedioArr + indLibre) = (*(pNota1Arr + indLibre) + *(pNota2Arr + indLibre)) / 2;
+
+		//printf("->envio->:%0x",*(pNombreMtz+indLibre));
+		//_pedirNombre(*(pNombreMtz+indLibre), indLibre, 20);
+
+		_testMatrix2();
+		*(pEstadoArr + indLibre) = iValNoLbr;
+	} else {
+		printf("==No hay espacio suficiente!!!==\n");
+	}
+}
+
+void mostrarAlumnos(int *pLegajoArr, int *pNota1Arr, int *pNota2Arr,
+		float *pPromedioArr, char *pNombreMtz, int *pEstadoArr, int iTop,
+		int iValNoLbr) {
+	int i;
+	for (int i = 0; i < iTop - 1; i++) {
+		if (*(pEstadoArr + i) == iValNoLbr) {
+			printf("Legajo numero %d \n", *(pLegajoArr + i));
+			_mostrarNombre(pNombreMtz, i, 20);
+			printf("Nota 1= %d \n", *(pNota1Arr + i));
+			printf("Nota 2= %d \n", *(pNota2Arr + i));
+			printf("Promedio = %f \n", *(pPromedioArr + i));
+		}
+	}
+}
+
+void _mostrarNombre(char *pNmbr, int iInd, int iTopCh) {
+	printf("=Nombre del alumno %s=\n", *(pNmbr + iInd));
+}
+
+int _buscarLibre(int *pEstadoArr, int iTop, int iValLbr) {
+	int i;
+	int indice = -1;
+	for (i = 0; i < iTop - 1; i++) {
+		if (*(pEstadoArr + i) == iValLbr) {
+			indice = i;
+			break;
+		}
+	}
+
+	return indice;
+}
+
+void _pedirNombre(char *unNombre, int iIndLibre, int iNomCantCh) {
+	printf("->recibo->:%0x",unNombre);
+	printf("-Ingrese un nombre: ");
+	scanf("%s", unNombre);
+	__fpurge(stdin);
+	printf("\n-quedo un nombre: %s",unNombre);
+	//printf("-Recibo->%0x\n", nombreMtz + iIndLibre);
+	//printf("-0->%0x\n", *(nombreMtz + iIndLibre));
+	//printf("-0->%0x\n", *(nombreMtz + iIndLibre) + 0);
+
+}
+
+void _testMatrix() {
+	int nombre[3][4] = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } };
+
+	printf("-1->%d\n", *(*(nombre + 0) + 0));
+	printf("-1->%d\n", *(*(nombre + 1) + 0));
+}
+void _testMatrix2() {
+	char nombre[3][5]={
+	 {'p','e','p','e','\0'},
+	 {'t','i','t','o','\0'},
+	 {'f','e','d','e','\0'}
+	 };
+
+	 char nombre2[3][5]={
+	 "pepe",
+	 "tito",
+	 "fede"
+	 };
+
+	 /*printf("-1->%s\n", *(nombre2+0)+0);
+	 printf("-1->%s\n",*(nombre2+1)+0); */
+
+	char nombre3[3][5];
+
+	/*printf("Ingrese 1er nombre :");
+	scanf("%s", (*(nombre3 + 0) + 0));
+	__fpurge(stdin);
+	printf("Ingrese 2do nombre :");
+	scanf("%s", (*(nombre3 + 1) + 0));
+	__fpurge(stdin);
+	printf("Ingrese 3er nombre :");
+	scanf("%s", (*(nombre3 + 2) + 0));
+	__fpurge(stdin);
+
+	printf("Muestro 1er nombre %s", *(nombre3 + 0) + 0);*/
+	printf("envio_1 %s\n", (*(nombre2+0)+0));
+	printf("envio_2 %s\n", (*(nombre2+0)+5));
+	printf("envio_3 %s\n", (*(nombre2+0)+10));
+	printf("envio princ %0x\n", nombre2);
+	_pedirTest(nombre2);
+
+	/*_pedirTest(*(nombre3+0));
+	printf("Muestro 1er nombre %s\n",63 *(nombre3+0));
+	_pedirTest(*(nombre3+1));
+	printf("Muestro 1er nombre %s\n", *(nombre3+1));*/
+
+}
+
+void _pedirTest(char *unNombre) {
+	printf("recibo princ %0x\n", unNombre);
+	printf("envio_1 %s\n", (*(unNombre+0)+0));
+	printf("envio_2 %s\n", (*(unNombre+0)+5));
+	printf("envio_3 %s\n", (*(unNombre+0)+10));
+
+
+
+	/*printf("recibo  %0x\n", *(unNombre+0)+0);
+	printf("recibo  %0x\n", *(unNombre+0)+1);
+	printf("recibo  %0x\n", *(unNombre+0)+2);
+	printf("recibo princ %0x\n", unNombre);*/
+
+	/*printf("-dirc memoria %0x-\n",unNombre);
+	printf("Ingrese 1er nombre :");
+	scanf("%s", unNombre);
+	__fpurge(stdin);*/
+
+	/*printf("Ingrese 2do nombre :");
+	scanf("%s", (*(nombre3 + 1) + 0));
+	__fpurge(stdin);
+	printf("Ingrese 3er nombre :");
+	scanf("%s", (*(nombre3 + 2) + 0));
+	__fpurge(stdin);*/
+
+	//printf("Muestro 1er nombre %s", unNombre);
+}
+

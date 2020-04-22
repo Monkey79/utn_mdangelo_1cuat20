@@ -7,6 +7,7 @@ C_SRCS += \
 ../src/ejercicios/ejrc1_clase2.c \
 ../src/ejercicios/ejrc1_clase3.c \
 ../src/ejercicios/ejrc1_clase6.c \
+../src/ejercicios/ejrc1_clase7_arrparalelos.c \
 ../src/ejercicios/ejrcA_clase2.c \
 ../src/ejercicios/ejrcB_clase2.c \
 ../src/ejercicios/ejrcC_clase2.c 
@@ -15,6 +16,7 @@ OBJS += \
 ./src/ejercicios/ejrc1_clase2.o \
 ./src/ejercicios/ejrc1_clase3.o \
 ./src/ejercicios/ejrc1_clase6.o \
+./src/ejercicios/ejrc1_clase7_arrparalelos.o \
 ./src/ejercicios/ejrcA_clase2.o \
 ./src/ejercicios/ejrcB_clase2.o \
 ./src/ejercicios/ejrcC_clase2.o 
@@ -23,6 +25,7 @@ C_DEPS += \
 ./src/ejercicios/ejrc1_clase2.d \
 ./src/ejercicios/ejrc1_clase3.d \
 ./src/ejercicios/ejrc1_clase6.d \
+./src/ejercicios/ejrc1_clase7_arrparalelos.d \
 ./src/ejercicios/ejrcA_clase2.d \
 ./src/ejercicios/ejrcB_clase2.d \
 ./src/ejercicios/ejrcC_clase2.d 

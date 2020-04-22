@@ -1,0 +1,91 @@
+/*
+ * ejrc1_clase7_arrparalelos.c
+ *  Created on: 21 abr. 2020
+ *  Author: mdangelo
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio_ext.h>
+
+#include "ejrc1_clase7_arrparalelos.h"
+
+#define ALUMNOS 7
+#define LIBRE 0
+#define OCUPADO 1
+
+#define FALSE 0;
+#define TRUE 1;
+
+int _buscarLibre(int *pEstadoArr, int iTop, int iValLbr);
+void _inicializarEstadoArr(int *estado, int iTop, int iValLibre);
+void _mostrarAlumnos(int *pLegajoArr, int *pNota1Arr, int *pNota2Arr,float *pPromedioArr, char nombres[][20], int *pEstadoArr,int iValNoLbr);
+
+void _altaAlumno(int *plegajoArr, int *pNota1Arr, int *pNota2Arr,float *pPromedioArr, char nombres[][20], int *pEstadoArr, int iValLbr, int iValNoLbr);
+
+
+void startEjrc1Clase7ArrParl(void){
+	int legajo[ALUMNOS];
+	int nota1[ALUMNOS];
+	int nota2[ALUMNOS];
+	float promedio[ALUMNOS];
+	char nombre[ALUMNOS][20];
+	int estado[ALUMNOS];
+	int i;
+
+	//TODO
+}
+
+int _buscarLibre(int *pEstadoArr, int iTop, int iValLbr){
+	int i;
+	int indice = -1;
+	for (i = 0; i < iTop - 1; i++) {
+		if (*(pEstadoArr + i) == iValLbr) {
+			indice = i;
+			break;
+		}
+	}
+	return indice;
+}
+
+void _inicializarEstadoArr(int *estado, int iTop, int iValLibre){
+	for(int i=0;i<iTop-1;i++){
+		*(estado+i) = iValLibre;
+	}
+}
+
+void _mostrarAlumnos(int *pLegajoArr, int *pNota1Arr, int *pNota2Arr,float *pPromedioArr, char nombres[][20], int *pEstadoArr, int iValNoLbr) {
+	for(int i=0;i<ALUMNOS;i++){
+		if(*(pLegajoArr+i)==iValNoLbr){
+			printf("=====Mostrando alumno cargado====\n");
+			printf("-Legajo: %d\n",*(pLegajoArr+i));
+			printf("-Nota 1: %d\n",*(pNota1Arr+i));
+			printf("-Nota 2: %d\n",*(pNota2Arr+i));
+			printf("-Promedio : %f\n",*(pPromedioArr+i));
+
+			printf("-Nombre : %s\n",nombres[i]);
+		}
+	}
+}
+
+void _altaAlumno(int *plegajoArr, int *pNota1Arr, int *pNota2Arr,float *pPromedioArr, char nombres[][20], int *pEstadoArr, int iValLbr, int iValNoLbr){
+	int iPosLbr = _damePosLibre(pEstadoArr, iValLbr);
+	if(iPosLbr != -1){
+
+	}
+}
+
+int _damePosLibre(int *pEstadoArr,int  iValLbr){
+	int iLibre = -1;
+	int bNoLibre = TRUE;
+	int i = 0;
+
+	do{
+		bNoLibre = *(pEstadoArr+i) != iValLbr;
+		i++;
+
+	}while(bNoLibre && i<ALUMNOS);
+	iLibre = (bNoLibre)?iLibre:(i-1);
+}
+
+
